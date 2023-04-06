@@ -1,0 +1,65 @@
+/* <div class="upper-bar">
+    <div class="menu-bar"></div>
+    <div class="logo"></div>
+    <div class="search"></div>
+  </div>
+  <div class="sub-menu">
+    <span class="sub-menu-title"></span>
+  </div>
+  <div class="eventBar">
+    <span class="eventBar-contents"></span>
+  </div>
+  <div class="contents-menu">
+    <span class="contents-menu">
+      <span class="contents-menu-icon"></span>
+      <span class="contents-menu-name"></span>
+    </span>
+  </div>
+  <div class="contents">
+    <div class="contents-main-title">
+      <span class="contents-pic"></span>
+      <span class="contents-sub-title"></span>
+    </div>
+  </div> */
+
+.upper-bar {
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.menu-bar {
+  background-color: yellow;
+  min-width: 50px;
+  width: 5%;
+}
+
+.logo {
+  background-color: yellowgreen;
+  min-width:50px;
+  width: 10%;
+}
+
+.search {
+  background-color: aqua;
+  min-width: 50px;
+  width: 5%;
+}
+
+.sub-menu {
+  background-color: brown;
+  display: flex;
+  min-width: 300px;
+  overflow-x: scroll;
+}
+
+.sub-menu-title {
+  min-width: 80px;
+  width:10%;
+}
+
+.sub-menu-title:hover {
+  background-color: aqua;
+}
+
