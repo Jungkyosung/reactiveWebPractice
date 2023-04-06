@@ -6,19 +6,20 @@
   <div class="sub-menu">
     <span class="sub-menu-title"></span>
   </div>
-  <div class="eventBar">
-    <span class="eventBar-contents"></span>
+  <div class="event-bar">
+    <span class="event-bar-contents"></span>
   </div>
   <div class="contents-menu">
-    <span class="contents-menu">
+    <div class="contents-menu-box">
       <span class="contents-menu-icon"></span>
       <span class="contents-menu-name"></span>
-    </span>
+    </div>
   </div>
-  <div class="contents">
-    <div class="contents-main-title">
-      <span class="contents-pic"></span>
-      <span class="contents-sub-title"></span>
+  <div class="topic">
+    <div class="topic-box">
+      <div class="topic-box-title">
+      <span class="topic-pic"></span>
+      <span class="topic-sub-title"></span>
     </div>
   </div> */
 
@@ -26,25 +27,39 @@
   background-color: blue;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  padding-top:10px;
+  padding-bottom: 10px;
 }
 
 .menu-bar {
   background-color: yellow;
-  min-width: 50px;
+  min-width: 30px;
   width: 5%;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.menu-bar:hover {
+  background-color: rgb(21, 255, 0);
 }
 
 .logo {
   background-color: yellowgreen;
-  min-width:50px;
-  width: 10%;
+  min-width:100px;
+  width: 20%;
+  text-align: center;
 }
 
 .search {
   background-color: aqua;
   min-width: 50px;
   width: 5%;
+  text-align: center;
+  margin-right: 10px;;
 }
 
 .sub-menu {
@@ -52,6 +67,9 @@
   display: flex;
   min-width: 300px;
   overflow-x: scroll;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
 }
 
 .sub-menu-title {
@@ -62,4 +80,85 @@
 .sub-menu-title:hover {
   background-color: aqua;
 }
+
+.event-bar {
+  background-color: blueviolet;
+  height: 50px;
+  margin: 5px 10px 5px 10px;
+}
+
+/* 플렉스인 경우 */
+.contents-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contents-menu-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: coral;
+  min-width: 56px;
+  width: 20%;
+}
+
+.contents-menu-icon {
+  height: 50px;
+}
+
+
+/* 그리드인 경우 */
+/* .contents-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
+
+.contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.contents-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: greenyellow;
+}
+
+.contents-title-name {
+  padding-left: 10px;
+}
+
+.contents-title-more {
+  padding-right: 10px;
+}
+.contents-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.contents-box-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  background-color:aliceblue;
+}
+
+.contents-pic {
+  height: 100px;
+  margin:0.2rem;
+  background-color: chocolate;
+}
+
+.contents-sub-title {
+  margin: 0.2rem;
+  background-color: darkgoldenrod;
+}
+
+
 
