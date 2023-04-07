@@ -22,6 +22,12 @@
       <span class="topic-sub-title"></span>
     </div>
   </div> */
+body {
+  max-width: 1200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 
 .upper-bar {
   background-color: blue;
@@ -160,5 +166,18 @@
   background-color: darkgoldenrod;
 }
 
+@media(min-width:800px){
 
+  .menu-bar{
+    visibility: hidden;
+  }
+
+  .contents-menu-box {
+    width:10%;
+  }
+  
+  .contents-box-content{
+    width:25%;
+  }
+}
 

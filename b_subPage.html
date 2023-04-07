@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>3D 테스트</title>
+</head>
+<body>
+  <canvas id="canvas" width="1000" height="1000"></canvas>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+        "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
+      }
+    }
+
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'GLTFLoader';
+
+    let scene = new THREE.Scene();
+    let renderer = new THREE.WebGLRenderer({
+      canvas : document.querySelector('#canvas'),
+      antialias : true
+    });
+
+    renderer.outputEncoding = THREE.sRGBEncoding;
+
+    let camera = new THREE.PerspectiveCamera(10, -1);
+    camera.position.set(0,0,3);
+
+    scene.background = new THREE.Color('black');
+    let light = new THREE.DirectionalLight(0xffffff, 2);
+    scene.add(light);
+
+
+    let loader = new GLTFLoader();
+
+
+    loader.load('cartoony_landmarks/scene.gltf', function(gltf){
+      scene.add(gltf.scene);
+      function animate(){
+        requestAnimationFrame(animate)
+        gltf.scene.rotation.y += 0.015
+        gltf.scene.rotation.x += 0.001
+        renderer.render(scene, camera);  
+      }
+
+      animate();
+    })
+
+    // loader.load('shiba/scene.gltf', function(gltf){
+    //   scene.add(gltf.scene);
+      
+    //   function animate(){
+    //     requestAnimationFrame(animate)
+    //     gltf.scene.rotation.y += 0.05
+    //     gltf.scene.rotation.x += 0.01
+    //     renderer.render(scene, camera);  
+    //   }
+
+    //   animate();
+    // });
+
+  </script>
+</body>
+</html>
